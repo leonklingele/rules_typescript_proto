@@ -16,8 +16,8 @@ function main() {
 
   const initialContents = fs.readFileSync(args.input_file_path, 'utf8');
 
-  const umdContents = convertToUmd(args, initialContents);
-  fs.writeFileSync(args.output_umd_path, umdContents, 'utf8');
+  // const umdContents = convertToUmd(args, initialContents);
+  fs.writeFileSync(args.output_umd_path, initialContents, 'utf8');
 
   const commonJsContents = convertToESM(args, initialContents);
   fs.writeFileSync(args.output_es6_path, commonJsContents, 'utf8');
